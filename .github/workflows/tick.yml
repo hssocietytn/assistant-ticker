@@ -7,4 +7,6 @@ jobs:
   tick:
     runs-on: ubuntu-latest
     steps:
-      - run: curl -fsS -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}" "${{ secrets.TICK_URL }}"
+      - name: Ping assistant
+        run: |
+          curl -fsS -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}" "${{ secrets.TICK_URL }}"
